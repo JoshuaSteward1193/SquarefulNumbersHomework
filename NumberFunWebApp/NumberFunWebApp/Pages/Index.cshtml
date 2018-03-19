@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    if(IsPost)
+    {
+        int valueEntered = Convert.ToInt32(Request.Form["InputNumber"]);
+
+        <text>
+        Your number is @valueEntered <br />
+        </text>
+    }
+}
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="contianer">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 text-center">
+            <h1>Number Fun Web App!</h1>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+        <form method="post">
+            <fieldset>
+                <legend>Please enter in the number you wish to have checked:</legend>
+                <div>
+                    <input type="number" name="InputNumber" value="42" />
+                    <input type="submit" value="Submit" class="submit" />
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="row">
+
+    </div>
+</div>
