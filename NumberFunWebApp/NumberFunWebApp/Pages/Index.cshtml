@@ -1,15 +1,6 @@
 ﻿@page
 @model IndexModel
-@{
-    if(IsPost)
-    {
-        int valueEntered = Convert.ToInt32(Request.Form["InputNumber"]);
 
-        <text>
-        Your number is @valueEntered <br />
-        </text>
-    }
-}
 @{
     ViewData["Title"] = "Home page";
 }
@@ -28,14 +19,18 @@
                 <legend>Please enter in the number you wish to have checked:</legend>
                 <div>
                     <input type="number" name="InputNumber" value="42" />
-                    <input type="submit" value="Submit" class="submit" />
+                    <input type="submit" value="Submit" class="submit" onclick="evaluateNumber()" />
                 </div>
             </fieldset>
         </form>
     </div>
     <div class="row">
-
-
+        @{
+            void evaluateNumber()
+            {
+                int valueEntered = Convert.ToInt32(Request.Form["InputNumber"]);
+            }
+        }
 
 
     </div>
